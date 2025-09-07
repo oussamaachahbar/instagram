@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram - Connexion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 935px;
+            margin-top: 60px;
+        }
+        
+        .phones {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDQ1MCA2MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQ1MCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMjUiIHk9IjMwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMDAwIj5JbWFnZSBkZSB0w6lsw6lwaG9uZTwvdGV4dD48L3N2Zz4=');
+            background-position: -46px 0;
+            background-repeat: no-repeat;
+            height: 618px;
+            width: 454px;
+            margin-right: 32px;
+        }
+        
+        .login-container {
+            margin-top: 12px;
+            max-width: 350px;
+            width: 100%;
+        }
+        
+        .login-box {
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 20px 40px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .logo {
+            margin: 22px auto 12px;
+            width: 175px;
+        }
+        
+        .form-container {
+            margin-top: 24px;
+        }
+        
+        .input-field {
+            margin-bottom: 6px;
+            position: relative;
+        }
+        
+        input {
+            background: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            color: #262626;
+            font-size: 12px;
+            height: 36px;
+            padding: 9px 8px 7px;
+            width: 100%;
+            outline: none;
+        }
+        
+        input:focus {
+            border-color: #a8a8a8;
+        }
+        
+        button {
+            background-color: #0095f6;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+            padding: 5px 9px;
+            width: 100%;
+            height: 32px;
+            cursor: pointer;
+        }
+        
+        button:disabled {
+            background-color: #b2dffc;
+        }
+        
+        .separator {
+            align-items: center;
+            color: #8e8e8e;
+            display: flex;
+            margin: 18px 0;
+        }
+        
+        .separator-line {
+            background-color: #dbdbdb;
+            flex-grow: 1;
+            height: 1px;
+        }
+        
+        .separator-text {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 18px;
+        }
+        
+        .fb-login {
+            color: #385185;
+            font-weight: 600;
+            margin: 8px 0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .fb-login i {
+            font-size: 18px;
+            margin-right: 6px;
+        }
+        
+        .forgot-pw {
+            color: #00376b;
+            font-size: 12px;
+            margin-top: 12px;
+            display: block;
+        }
+        
+        .signup-box {
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .signup-text {
+            font-size: 14px;
+            margin: 15px;
+        }
+        
+        .signup-link {
+            color: #0095f6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .get-app {
+            text-align: center;
+        }
+        
+        .get-app-text {
+            font-size: 14px;
+            margin: 10px 20px;
+        }
+        
+        .app-download {
+            margin-top: 20px;
+        }
+        
+        .app-download img {
+            height: 40px;
+            margin: 0 5px;
+        }
+        
+        .footer {
+            max-width: 975px;
+            width: 100%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .footer-link {
+            color: #8e8e8e;
+            font-size: 12px;
+            margin: 0 8px 8px;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+        
+        @media (max-width: 875px) {
+            .phones {
+                display: none;
+            }
+            
+            .container {
+                margin-top: 0;
+            }
+            
+            .login-container {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-box">
+                <h2>INSTAGRAM</h2>
+                <div class="form-container">
+                    <form id="login-form">
+                        <div class="input-field">
+                            <input type="text" id="username" placeholder="Numéro de téléphone, nom d'utilisateur ou e-mail" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="password" placeholder="Mot de passe" required>
+                        </div>
+                        <button type="submit" id="login-button" disabled>Se connecter</button>
+                    </form>
+                    
+                    <div class="separator">
+                        <div class="separator-line"></div>
+                        <div class="separator-text">OU</div>
+                        <div class="separator-line"></div>
+                    </div>
+                    
+                    <div class="fb-login">
+                        <i class="fab fa-facebook-square"></i> Se connecter avec Facebook
+                    </div>
+                    
+                    <a href="#" class="forgot-pw">Mot de passe oublié ?</a>
+                </div>
+            </div>
+            
+            <div class="signup-box">
+                <p class="signup-text">Vous n'avez pas de compte ? <a href="#" class="signup-link">Inscrivez-vous</a></p>
+            </div>
+            
+            <div class="get-app">
+                <p class="get-app-text">Téléchargez l'application.</p>
+                <div class="app-download">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="136" height="40" viewBox="0 0 136 40">
+                            <path fill="#888888" d="M40.9 16.8h-2.8v-1.1h2.7v-1.3c0-.4 0-1 .3-1.4.3-.4.8-.6 1.4-.6.3 0 .6.1.8.2.2.1.4.3.5.5l1-.8c-.2-.3-.5-.6-.9-.8-.4-.2-.9-.3-1.4-.3-.9 0-1.6.3-2.1.8-.5.5-.8 1.2-.8 2.1v1.4h-1.2v1.5h1.2v5.3h1.9v-5.3zm8.1-3.3h-2.1v7.9h1.9v-2.9h2.1c1.5 0 2.6-.5 2.6-2.5s-1.1-2.5-2.5-2.5zm-.1 4.3h-2v-3.6h2c.9 0 1.4.4 1.4 1.8s-.5 1.8-1.4 1.8zm9.6-4.3h-2.1v7.9h1.9v-2.9h2.1c1.5 0 2.6-.5 2.6-2.5s-1.1-2.5-2.5-2.5zm-.1 4.3h-2v-3.6h2c.9 0 1.4.4 1.4 1.8s-.5 1.8-1.4 1.8zm7.3-4.3h-2v7.9h1.9v-2.9h1.8c.2 0 .4 0 .6-.1.2 0 .4-.1.5-.2.1-.1.3-.2.3-.4.1-.2.1-.3.1-.5v-3.1c0-.2 0-.4-.1-.5-.1-.2-.2-.3-.3-.4-.1-.1-.3-.2-.5-.2-.2-.1-.4-.1-.6-.1h-2.7zm0 1.5h1.8c.2 0 .4 0 .5.1.1 0 .3.1.3.2.1.1.1.2.1.4v3.1c0 .2 0 .3-.1.4-.1.1-.2.2-.3.2-.1.1-.3.1-.5.1h-1.8v-4.5zm8.2 6.4h1.9v-7.9h-1.9v7.9zm.9-9.8c-.3 0-.5-.1-.7-.3-.2-.2-.3-.4-.3-.7 0-.3.1-.5.3-.7.2-.2.4-.3.7-.3.3 0 .5.1.7.3.2.2.3.4.3.7 0 .3-.1.5-.3.7-.2.2-.4.3-.7.3zm6.5 9.8h1.9v-4.3l.1-2.2 1.9 6.5h1.3l1.9-6.5.1 2.2v4.3h1.9v-7.9h-2.5l-1.7 5.9-1.7-5.9h-2.5v7.9zm13.9-3.2v-4.7h-1.4v-1.5h1.4v-.9h1.9v.9h2.2v1.5h-2.2v4.4c0 .5.1.9.4 1.1.3.2.7.3 1.3.3h.5v1.6h-.7c-.9 0-1.6-.2-2.1-.5-.5-.3-.8-.8-1-1.4-.1.3-.2.6-.3.8-.1.2-.3.4-.5.6-.2.2-.5.3-.8.4-.3.1-.7.2-1.1.2-.8 0-1.4-.2-1.9-.5-.5-.3-.8-.8-1-1.4-.2-.6-.3-1.3-.3-2.1v-3.4h2.7v3.3c0 .5.1.9.3 1.1.2.2.5.3.9.3.4 0 .7-.1.9-.3.2-.2.3-.6.3-1.1zm8.4 3.2h1.9v-4.3l.1-2.2 1.9 6.5h1.3l1.9-6.5.1 2.2v4.3h1.9v-7.9h-2.5l-1.7 5.9-1.7-5.9h-2.5v7.9z"></path>
+                            <path fill="#888888" d="M0 19.9v-8.9h2.1v7.4h3.2v1.5H0zm6.5 0v-8.9h2.1v7.4h3.2v1.5H6.5zm9.7 0v-8.9h6.9v1.5h-4.8v2.6h4.3v1.5h-4.3v3.3h-2.1zm12.6 0v-8.9h2.1v7.4h3.2v1.5h-5.3zm9.7 0v-8.9h6.9v1.5h-4.8v2.6h4.3v1.5h-4.3v3.3h-2.1zm16.2-6.3l-3.1 6.3h-2.3l3.1-6.3h-3.1v-1.5h5.8v1.5h-2.4zm4.9 6.3v-8.9h2.1v7.4h3.2v1.5h-5.3zm9.7 0v-8.9h2.1v7.4h3.2v1.5h-5.3zm9.7 0v-8.9h6.9v1.5h-4.8v2.6h4.3v1.5h-4.3v3.3h-2.1zm16.2-6.3l-3.1 6.3h-2.3l3.1-6.3h-3.1v-1.5h5.8v1.5h-2.4zm4.9 6.3v-8.9h2.1v7.4h3.2v1.5h-5.3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="136" height="40" viewBox="0 0 136 40">
+                            <path fill="#888888" d="M33.1 20.3c0 7.5-5.7 13.2-13.2 13.2S6.7 27.8 6.7 20.3 12.4 7.1 19.9 7.1s13.2 5.7 13.2 13.2zm-5.9 0c0-4.2-3.2-7.4-7.4-7.4s-7.4 3.2-7.4 7.4 3.2 7.4 7.4 7.4 7.4-3.2 7.4-7.4zm15.9-6.3h-2.1v13.2h2.1V14zm10.5 13.2h2.6l-3.6-13.2h-2.3l-3.6 13.2h2.6l.6-2.3h3.9l.8 2.3zm-3.3-5.1h-2.6l1.3-4.6 1.3 4.6zm12.2-8.1h-2.1v13.2h2.1V14zm10.5 13.2h2.6l-3.6-13.2h-2.3l-3.6 13.2h2.6l.6-2.3h3.9l.8 2.3zm-3.3-5.1h-2.6l1.3-4.6 1.3 4.6zm12.2-8.1h-2.1v13.2h2.1V14zm8.5 13.2h2.1v-5.6h4.1v-2.1h-4.1V14h-2.1v5.5h-4.1v2.1h4.1v5.6zm15.9-13.2h-2.1v13.2h2.1V14zm10.5 13.2h2.6l-3.6-13.2h-2.3l-3.6 13.2h2.6l.6-2.3h3.9l.8 2.3zm-3.3-5.1h-2.6l1.3-4.6 1.3 4.6z"></path>
+                            <path fill="#888888" d="M106.1 20.3c0 7.5-5.7 13.2-13.2 13.2s-13.2-5.7-13.2-13.2S85.4 7.1 92.9 7.1s13.2 5.7 13.2 13.2zm-5.9 0c0-4.2-3.2-7.4-7.4-7.4s-7.4 3.2-7.4 7.4 3.2 7.4 7.4 7.4 7.4-3.2 7.4-7.4z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#" class="footer-link">Meta</a>
+            <a href="#" class="footer-link">À propos</a>
+            <a href="#" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Emplois</a>
+            <a href="#" class="footer-link">Aide</a>
+            <a href="#" class="footer-link">API</a>
+            <a href="#" class="footer-link">Confidentialité</a>
+            <a href="#" class="footer-link">Conditions</a>
+            <a href="#" class="footer-link">Comptes principaux</a>
+            <a href="#" class="footer-link">Lieux</a>
+            <a href="#" class="footer-link">Instagram Lite</a>
+            <a href="#" class="footer-link">Threads</a>
+            <a href="#" class="footer-link">Téléchargement de contacts et non-utilisateurs</a>
+            <a href="#" class="footer-link">Meta Verified</a>
+        </div>
+        <div class="copyright">
+            © 2023 Instagram from Meta
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const loginButton = document.getElementById('login-button');
+            const loginForm = document.getElementById('login-form');
+            
+            // Activer/désactiver le bouton de connexion
+            function checkInputs() {
+                if (usernameInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+                    loginButton.disabled = false;
+                } else {
+                    loginButton.disabled = true;
+                }
+            }
+            
+            usernameInput.addEventListener('input', checkInputs);
+            passwordInput.addEventListener('input', checkInputs);
+            
+            // Gérer la soumission du formulaire
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulation de connexion
+                loginButton.textContent = 'Connexion...';
+                loginButton.disabled = true;
+                
+                setTimeout(function() {
+                    alert('Tentative de connexion avec:\nNom d\'utilisateur: ' + usernameInput.value + '\nMot de passe: ' + passwordInput.value);
+                    loginButton.textContent = 'Se connecter';
+                    checkInputs();
+                }, 1500);
+            });
+            
+            // Animation pour le bouton Facebook
+            const fbLogin = document.querySelector('.fb-login');
+            fbLogin.addEventListener('click', function() {
+                alert('Connexion avec Facebook');
+            });
+            
+            // Animation pour le lien "Mot de passe oublié"
+            const forgotPw = document.querySelector('.forgot-pw');
+            forgotPw.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Récupération de mot de passe');
+            });
+            
+            // Animation pour le lien "Inscrivez-vous"
+            const signupLink = document.querySelector('.signup-link');
+            signupLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Redirection vers la page d\'inscription');
+            });
+        });
+    </script>
+</body>
+</html>
